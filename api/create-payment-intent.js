@@ -10,7 +10,7 @@ function cors(res, origin) {
 }
 
 module.exports = async (req, res) => {
-  const allowed = process.env.CORS_ALLOWED_ORIGIN || '*';
+  const allowed = process.env.CORS_ALLOWED_ORIGIN || 'https://calcula.com.pl' || '*';
   cors(res, allowed);
 
   if (req.method === 'OPTIONS') return res.status(200).end();
